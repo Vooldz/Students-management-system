@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\Students\GetStudentController;
+use App\Http\Controllers\Api\V1\Students\ShowStudentController;
 use App\Http\Controllers\Api\V1\Students\StoreStudentController;
 
 /*
@@ -23,5 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::group(['prefix'=> '/v1'], function () {
     Route::get('/students', [GetStudentController::class,'index']);
     Route::post('/students', [StoreStudentController::class, 'store']);
+    Route::get('/students/{student}', [ShowStudentController::class,'show']);
+
 });
 
