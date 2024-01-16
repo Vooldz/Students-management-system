@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\V1\Students\ShowStudentController;
 use App\Http\Controllers\Api\V1\Students\StoreStudentController;
 use App\Http\Controllers\Api\V1\Students\DeleteStudentController;
 use App\Http\Controllers\Api\V1\Students\UpdateStudentController;
+use App\Http\Controllers\Api\V1\Students\StudentAttendanceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,5 +30,6 @@ Route::group(['prefix'=> '/v1'], function () {
     Route::get('/students/{student}', [ShowStudentController::class,'show']);
     Route::delete('/students/{student}', [DeleteStudentController::class,'destroy']);
     Route::patch('/students/{student}', [UpdateStudentController::class,'update']);
+    Route::patch('/is-attendance', [StudentAttendanceController::class,'is_attendance']);
 });
 
