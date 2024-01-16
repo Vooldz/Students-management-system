@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\Students\DeleteStudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\V1\Students\GetStudentController;
@@ -25,6 +26,6 @@ Route::group(['prefix'=> '/v1'], function () {
     Route::get('/students', [GetStudentController::class,'index']);
     Route::post('/students', [StoreStudentController::class, 'store']);
     Route::get('/students/{student}', [ShowStudentController::class,'show']);
-
+    Route::delete('/students/{student}', [DeleteStudentController::class,'destroy']);
 });
 
