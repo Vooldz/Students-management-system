@@ -23,11 +23,11 @@ class StoreStudentRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string'],
-            'image' => 'image',
-            'birthday' => 'date',
-            'phone_number' => ['digits_between:10,15'],
-            'attendance' => ['integer'],
-            'location' => ['string'],
+            'image' => ['nullable', 'image'],
+            'birthday' => ['nullable', 'date'],
+            'phone_number' => ['nullable', 'digits_between:10,15'],
+            'attendance' => ['nullable', 'integer'],
+            'location' => ['nullable', 'string'],
         ];
     }
 }
